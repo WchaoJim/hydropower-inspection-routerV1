@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Orbitron", sans-serif;
+  
+  --color-cyber-blue: #0ea5e9;
+  --color-cyber-cyan: #22d3ee;
+  --color-cyber-dark: #020617;
+  --color-cyber-bg: #030816;
+  --color-cyber-card: rgba(15, 23, 42, 0.6);
+  --color-cyber-border: rgba(56, 189, 248, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-bg text-slate-200 antialiased overflow-hidden selection:bg-cyan-500/30;
+    font-family: var(--font-sans);
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(14, 165, 233, 0.05) 0%, transparent 30%);
+  }
+}
+
+@layer components {
+  .cyber-box {
+    @apply bg-cyber-card backdrop-blur-md border border-cyber-border rounded-sm relative overflow-hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .cyber-box-glow {
+    @apply border-cyan-500/30 shadow-[0_0_15px_rgba(34,211,238,0.1)];
+  }
+
+  .cyber-gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-cyan-500/30 transition-colors;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}

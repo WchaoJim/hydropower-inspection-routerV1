@@ -1,0 +1,6 @@
+{
+  "name": "水电站智能巡检系统",
+  "description": "基于AI与物联网的水电站无人集控巡检管理平台，支持机器人、无人机多源数据集成与智能预警。",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}
