@@ -10,7 +10,7 @@ import { SystemHealth } from './pages/SystemHealth';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/hydropower-inspection-routerV1">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
